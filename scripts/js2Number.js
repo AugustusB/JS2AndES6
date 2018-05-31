@@ -26,8 +26,8 @@
         },
         Numbers4 = function(findElem){
             try {
-                var html = "<div>Number.MAX_VALUE = " + Number.MAX_VALUE+ "</div>";
-                html += "<div>Number.MIN_VALUE = " + Number.MIN_VALUE + "</div>"
+                var html = "<div>window.Number.MAX_VALUE = " + window.Number.MAX_VALUE+ "</div>";
+                html += "<div>window.Number.MIN_VALUE = " + window.Number.MIN_VALUE + "</div>"
                 $(findElem).append(html);
                 
             } catch (error) {
@@ -37,15 +37,15 @@
         },
 
         Numbers5 = function(findElem){
-            var html = "<div>Number.MAX_VALUE * 2 = " + (Number.MAX_VALUE * 2) + "</div>";
-            html += "<div>Number.MAX_VALUE * -2 = " + (Number.MAX_VALUE * -2) + "</div>";
+            var html = "<div>window.Number.MAX_VALUE * 2 = " + (window.Number.MAX_VALUE * 2) + "</div>";
+            html += "<div>window.Number.MAX_VALUE * -2 = " + (window.Number.MAX_VALUE * -2) + "</div>";
             $(findElem).append(html);
         },
 
         Numbers6 = function(findElem){
             var count,
             price = 3.99,
-            html = "<div>typeof NAN = " + (typeof NAN) + "</div>";
+            html = "<div>typeof NaN = " + (typeof NaN) + "</div>";
             html += "<div>When count is undefined price/count = " + (price/count) + "</div>";
             html += "<div>When count is undefined isNaN(price/count) = " + isNaN(price/count) + "</div>";
             $(findElem).append(html);

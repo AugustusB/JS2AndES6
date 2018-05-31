@@ -19,4 +19,16 @@ $(function(){
     es6NewSyntax.newLet2('body');
     es6NewSyntax.newLet3('body');
     es6NewSyntax.newLet4('body');
+    es6NewSyntax.newLet5('body');
+    es6NewSyntax.newLet6('body');
+    es6NewSyntax.newConst7('body');
+    es6NewSyntax.jsLambda1('body');
+    es6NewSyntax.jsLambda2('body');
+    es6NewSyntax.jsLambda3('body');
+    es6NewSyntax.jsLambda4('body');
+    es6NewSyntax.jsFuncTestThis('body');
+    es6NewSyntax.jsFuncTestThis1(undefined, true);
+    es6NewSyntax.jsFuncTestThis2();
+    es6NewSyntax.jsDynamicFunction();
+    
 });
