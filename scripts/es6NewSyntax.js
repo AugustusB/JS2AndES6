@@ -119,6 +119,26 @@
             var dynFuncGetPrice = new Function("price = 10.09", "count = 2", "return price * count;")
             let html = "<div>DYNAMIC FUNCTIONS - var dynFunc = new Function(\"price = 10.09\", \"count = 2\", \"return price * count;\") :<b>" + dynFuncGetPrice() + "</b></div>";
             $(findElem).append(html);
+        },
+
+        jsDefaultParaFunc1 = function jsDefaultParaFunc1(findElem = 'body'){
+            var getProduct = function getProduct(prodId = 1000, type = 'woodwork'){
+                let html = `<div> Passing undefined to getProduct(undefined, \'SQL Dev\') : prodId = ${prodId}, type = ${type}</div>`;
+                $(findElem).append(html);
+            };
+            getProduct(undefined, 'SQL Dev');
+        },
+
+        jsRestOperator = function jsRestOperator(findElem = 'body', prodId, ...categories){
+            let html = `<div> using Rest in jsRest(findElem = 'body', prodId, ...categories) : categories instanceof Array = ${categories instanceof Array}</div>`;
+            html += `<div> categories = ${categories}</div>`;
+            $(findElem).append(html);
+        },
+
+        jsSpreadOperator = function jsSpreadOperator(findElem = 'body'){
+            let someArray = new Array(...[10,60,30]);
+            let html = `<div>Array(...[10,60,30]) find hieghest Math.max(...someArray) : ${Math.max(...someArray)}</div>`;
+            $(findElem).append(html);
         }
         
         ;
@@ -138,8 +158,11 @@
             jsFuncTestThis: jsFuncTestThis,
             jsFuncTestThis1: jsFuncTestThis1,
             jsFuncTestThis2: jsFuncTestThis2,
-            jsDynamicFunction: jsDynamicFunction
-            
+            jsDynamicFunction: jsDynamicFunction,
+            // ES6 does not need define as above
+            jsDefaultParaFunc1,
+            jsRestOperator,
+            jsSpreadOperator
         };
     };
 

@@ -30,5 +30,8 @@ $(function(){
     es6NewSyntax.jsFuncTestThis1(undefined, true);
     es6NewSyntax.jsFuncTestThis2();
     es6NewSyntax.jsDynamicFunction();
+    es6NewSyntax.jsDefaultParaFunc1();
+    es6NewSyntax.jsRestOperator(undefined, 123, 'veg', 'meat', 'pasta');
+    es6NewSyntax.jsSpreadOperator();
     
 });
