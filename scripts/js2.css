@@ -13,6 +13,22 @@ body {
     overflow:hidden; 
   }
 
+  header h1 {
+    padding-top:0;
+    margin:5px 5px 0px 5px;
+    float: left;
+    text-transform:uppercase;
+    font-size:1.2em;
+    line-height:1em;
+  }
+
+  header img {
+    width:30%;
+    float: left;
+    margin:0px 5px 0px 0px;
+    box-shadow:3px 3px 5px 1px #868585;
+  }
+
   section {
     width:80%;
     background-color:white;
@@ -24,9 +40,26 @@ body {
     border-width:5px;
   }
 
+  nav {
+    /* width:70%; */
+    float: top;
+  }
+
+  nav ul {
+    list-style-type:none;
+  }
+
+  nav li {
+    float:left;
+    margin-left:5px;
+  }
+
+  nav li a {
+    color:#F6FA0E;
+  }  
+
   h1 {
     font-size:2em;
-    
     margin:0;
     padding:0;
     padding-top:10px;
@@ -45,3 +78,4 @@ body {
     padding:10px;
     overflow:hidden; 
   }
+  
