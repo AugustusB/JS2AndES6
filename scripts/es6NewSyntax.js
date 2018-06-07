@@ -3,18 +3,18 @@
     ns2.NewSytax = function NewSytax(){
         // Private members
         var newLet1 = function newLet1(findElem){
-            var html = "<div> productId called before var declaration :<b>" + productId + "</b></div>";
+            var html = "<li> productId called before var declaration :<b>" + productId + "</b></li>";
             $(findElem).append(html);
             var productId = 12;
         },
         newLet2 = function newLet2(findElem){
             var productId = 12;
-            var html = "<div> productId called after var declaration :<b>" + productId + "</b></div>";
+            var html = "<li> productId called after var declaration :<b>" + productId + "</b></li>";
             $(findElem).append(html);
         },
         newLet3 = function newLet3(findElem){
             let productId = 13;
-            var html = "<div> productId called after let declaration (no hoisting??) :<b>" + productId + "</b></div>";
+            var html = "<li> productId called after let declaration (no hoisting??) :<b>" + productId + "</b></li>";
             $(findElem).append(html);
     
         },
@@ -23,7 +23,7 @@
             {
                 let productId = "inner block";                
             }
-            var html = "<div> productId called with let block scope :<b>" + productId + "</b></div>";
+            var html = "<li> productId called with let block scope :<b>" + productId + "</b></li>";
             $(findElem).append(html);
         },
         newLet5 = function newLet5(findElem){
@@ -31,7 +31,7 @@
             for (var index = 0; index < 2; index++) {
                 arrayOfFunctions.push(function() {return index});
             }
-            var html = "<div> function invoked in array with closure using var in for :<b>" + arrayOfFunctions[0]() + "</b></div>";
+            var html = "<li> function invoked in array with closure using var in for :<b>" + arrayOfFunctions[0]() + "</b></li>";
             $(findElem).append(html)
         },
         newLet6 = function newLet6(findElem){
@@ -39,7 +39,7 @@
             for (let index = 0; index < 2; index++) {
                 arrayOfFunctions.push(function() {return index});
             }
-            var html = "<div> function invoked in array with closure using let in for :<b>" + arrayOfFunctions[0]() + "</b></div>";
+            var html = "<li> function invoked in array with closure using let in for :<b>" + arrayOfFunctions[0]() + "</b></li>";
             $(findElem).append(html)
         },
         newConst7  = function newConst7(findElem){
@@ -47,22 +47,22 @@
             if (MY_CONST_NUM > 10){
                 const MY_CONST_NUM = 10;
             }
-            var html = "<div>const MY_CONST_NUM are also block scoped like let :<b>" + MY_CONST_NUM + "</b></div>";
+            var html = "<li>const MY_CONST_NUM are also block scoped like let :<b>" + MY_CONST_NUM + "</b></li>";
             $(findElem).append(html);
         },
         jsLambda1 = function jsLambda1(findElem){
             let getPrice = () => 11.99;
-            let html = "<div> using let getPrice = () => 11.99 lambda sytax with no parameters :<b>" + getPrice() + "</b></div>";
+            let html = "<li> using let getPrice = () => 11.99 lambda sytax with no parameters :<b>" + getPrice() + "</b></li>";
             $(findElem).append(html);
         },
         jsLambda2 = function jsLambda2(findElem){
             let getPrice = (count) => count * 11.99;
-            let html = "<div> using let (count) => count * 11.99 lambda sytax with ONE parameter :<b>" + getPrice(2) + "</b></div>";
+            let html = "<li> using let (count) => count * 11.99 lambda sytax with ONE parameter :<b>" + getPrice(2) + "</b></li>";
             $(findElem).append(html);
         },
         jsLambda3 = function jsLambda3(findElem){
             let getPrice = (count, tax) => count * 11.99 * (1 + tax);
-            let html = "<div> using let getPrice = (count, tax) => count * 11.99 * (1 + tax) lambda sytax with multiple parameters :<b>" + getPrice(2, 0.2) + "</b></div>";
+            let html = "<li> using let getPrice = (count, tax) => count * 11.99 * (1 + tax) lambda sytax with multiple parameters :<b>" + getPrice(2, 0.2) + "</b></li>";
             $(findElem).append(html);
         },
         jsLambda4 = function jsLambda4(findElem){
@@ -70,14 +70,14 @@
                 let tot = count * 11.99 ;
                 return tot *= (1 + tax)
             }
-            let html = "<div> using lambda sytax with multiple statements must use return :<b>" + getPrice(2, 0.2) + "</b></div>";
+            let html = "<li> using lambda sytax with multiple statements must use return :<b>" + getPrice(2, 0.2) + "</b></li>";
             $(findElem).append(html);
         },
         jsFuncTestThis = function jsFuncTestThis(findElem){
             function proc(){
                 return this;
             }
-            let html = "<div>this :<b>" + proc() + "</b></div>";
+            let html = "<li>this :<b>" + proc() + "</b></li>";
             $(findElem).append(html);
         },
         jsFuncTestThis1 = function jsFuncTestThis1(findElem = 'body', listFields = false){
@@ -87,11 +87,11 @@
                     return this;
                 }
             }
-            let html = "<div>this in invoice.process() :<b>" + invoice.process() + "</b></div>";
+            let html = "<li>this in invoice.process() :<b>" + invoice.process() + "</b></li>";
             var obj = invoice.process();
             if (listFields){
                 for (var key in obj) {
-                    html+= "<div>" + key + " : " + obj[key] + "</div>" 
+                    html+= "<li>" + key + " : " + obj[key] + "</li>" 
                  }
             }
            
@@ -104,11 +104,11 @@
                 process: () => this
             }
 
-            let html = "<div>this in invoice.process() :<b>" + invoice.process() + "</b></div>";
+            let html = "<li>this in invoice.process() :<b>" + invoice.process() + "</b></li>";
             var obj = invoice.process();
             if (listFields){
                 for (var key in obj) {
-                    html+= "<div>" + key + " : " + obj[key] + "</div>" ;
+                    html+= "<li>" + key + " :<b> " + obj[key] + "</b></li>" ;
                  }
             }
             
@@ -117,29 +117,61 @@
 
         jsDynamicFunction = function jsDynamicFunction(findElem = 'body'){
             var dynFuncGetPrice = new Function("price = 10.09", "count = 2", "return price * count;")
-            let html = "<div>DYNAMIC FUNCTIONS - var dynFunc = new Function(\"price = 10.09\", \"count = 2\", \"return price * count;\") :<b>" + dynFuncGetPrice() + "</b></div>";
+            let html = "<li>DYNAMIC FUNCTIONS - var dynFunc = new Function(\"price = 10.09\", \"count = 2\", \"return price * count;\") :<b>" + dynFuncGetPrice() + "</b></li>";
             $(findElem).append(html);
         },
 
         jsDefaultParaFunc1 = function jsDefaultParaFunc1(findElem = 'body'){
             var getProduct = function getProduct(prodId = 1000, type = 'woodwork'){
-                let html = `<div> Passing undefined to getProduct(undefined, \'SQL Dev\') : prodId = ${prodId}, type = ${type}</div>`;
+                let html = `<li> Passing undefined to getProduct(undefined, \'SQL Dev\') :<b> prodId = ${prodId}, type = ${type}</b></li>`;
                 $(findElem).append(html);
             };
             getProduct(undefined, 'SQL Dev');
         },
 
         jsRestOperator = function jsRestOperator(findElem = 'body', prodId, ...categories){
-            let html = `<div> using Rest in jsRest(findElem = 'body', prodId, ...categories) : categories instanceof Array = ${categories instanceof Array}</div>`;
-            html += `<div> categories = ${categories}</div>`;
+            let html = `<li> using Rest in jsRest(findElem = 'body', prodId, ...categories) :<b> categories instanceof Array = ${categories instanceof Array}</b></li>`;
+            html += `<li> <b>categories = ${categories}</b></li>`;
             $(findElem).append(html);
         },
 
         jsSpreadOperator = function jsSpreadOperator(findElem = 'body'){
             let someArray = new Array(...[10,60,30]);
-            let html = `<div>Array(...[10,60,30]) find hieghest Math.max(...someArray) : ${Math.max(...someArray)}</div>`;
+            let html = `<li>Array(...[10,60,30]) find hieghest Math.max(...someArray) :<b> ${Math.max(...someArray)}</b></li>`;
+            someArray = [...[2,5,]];
+            html += `<li>someArray = [...[,,]] :<b> ${someArray}</b></li>`;
+            html += `<li>Matt.max(...\'123567432\') :<b> ${Math.max(...'123567432')}</b></li>`;
+            let strArr = ['W', ...'ABCD', 'N'];
+            html += `<li>strArr = [\'W\', ...\'ABCD\', \'N\'] :<b> ${strArr}</b></li>`;
+            $(findElem).append(html);
+        },
+
+        jsObjectLiteralsEx = function jsObjectLiteralsEx(findElem = 'body'){
+            let price = 10.99;
+            let type = "wood";
+            let dept = 'department'; 
+            let funct1 = "demoFunction";
+            var productView = {
+                price,
+                type,
+                [dept] : 'Fridge',
+                [funct1]() {
+                    return 'In demoFunction.'
+                }
+            };
+            let html = '';
+            for (var key in productView) {
+                if (productView.hasOwnProperty(key)) {
+                    html += `<li>object leteral using extension :<b> ${key} : ${productView[key]} </b></li>`;
+                }
+            };
+
+            html += `<li>productView.demoFunction() :<b> ${productView.demoFunction()} </b></li>`;
             $(findElem).append(html);
         }
+
+        
+
         
         ;
         // Public members
@@ -162,7 +194,8 @@
             // ES6 does not need define as above
             jsDefaultParaFunc1,
             jsRestOperator,
-            jsSpreadOperator
+            jsSpreadOperator,
+            jsObjectLiteralsEx
         };
     };
 

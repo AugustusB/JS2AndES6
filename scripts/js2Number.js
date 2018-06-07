@@ -6,48 +6,48 @@
         var Numbers1 = function (findElem){
             var quantity = 2;
             var price = 0.99;
-            $(findElem).append("<div>quantity * price = " + (quantity*price) + "</div>");
+            $(findElem).append("<li>quantity * price = " + (quantity*price) + "</li>");
         },
 
         Numbers2 = function(findElem){
             var price = "0.99";
-            $(findElem).append("<div>typeof \"0.99\" = " + typeof price + "</div>" );
+            $(findElem).append("<li>typeof \"0.99\" = " + typeof price + "</li>" );
         },
 
         Numbers3 = function(findElem){
             try {
                 var price = 3.2e4;
-                $(findElem).append("<div>3.2e4 = " + 3.2e4 + "</div>" );
+                $(findElem).append("<li>3.2e4 = " + 3.2e4 + "</li>" );
                 throw "error1"
             } catch (error) {
-                $(findElem).append("<div>Caught error : " + error + "</div>");
+                $(findElem).append("<li>Caught error : " + error + "</li>");
             }
             
         },
         Numbers4 = function(findElem){
             try {
-                var html = "<div>window.Number.MAX_VALUE = " + window.Number.MAX_VALUE+ "</div>";
-                html += "<div>window.Number.MIN_VALUE = " + window.Number.MIN_VALUE + "</div>"
+                var html = "<li>window.Number.MAX_VALUE = " + window.Number.MAX_VALUE+ "</li>";
+                html += "<li>window.Number.MIN_VALUE = " + window.Number.MIN_VALUE + "</li>"
                 $(findElem).append(html);
                 
             } catch (error) {
-                $(findElem).append("<div>Caught error : " + error + "</div>");
+                $(findElem).append("<li>Caught error : " + error + "</li>");
             }
             
         },
 
         Numbers5 = function(findElem){
-            var html = "<div>window.Number.MAX_VALUE * 2 = " + (window.Number.MAX_VALUE * 2) + "</div>";
-            html += "<div>window.Number.MAX_VALUE * -2 = " + (window.Number.MAX_VALUE * -2) + "</div>";
+            var html = "<li>window.Number.MAX_VALUE * 2 = " + (window.Number.MAX_VALUE * 2) + "</li>";
+            html += "<li>window.Number.MAX_VALUE * -2 = " + (window.Number.MAX_VALUE * -2) + "</li>";
             $(findElem).append(html);
         },
 
         Numbers6 = function(findElem){
             var count,
             price = 3.99,
-            html = "<div>typeof NaN = " + (typeof NaN) + "</div>";
-            html += "<div>When count is undefined price/count = " + (price/count) + "</div>";
-            html += "<div>When count is undefined isNaN(price/count) = " + isNaN(price/count) + "</div>";
+            html = "<li>typeof NaN = " + (typeof NaN) + "</li>";
+            html += "<li>When count is undefined price/count = " + (price/count) + "</li>";
+            html += "<li>When count is undefined isNaN(price/count) = " + isNaN(price/count) + "</li>";
             $(findElem).append(html);
         };
 

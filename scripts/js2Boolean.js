@@ -4,19 +4,19 @@
         // private members
         var boolean1 = function boolean1(findElem){
             var strVar = "Hi";
-            var html = "<div> Boolean(\"\") :<b>" + window.Boolean("") + "</b></div>";
-            html +=  "<div> Boolean(\" \") :<b>" + window.Boolean(" ") + "</b></div>";
-            html +=  "<div> Boolean(\"Hello\") :<b>" + window.Boolean("Hello") + "</b></div>";
-            html +=  "<div> Boolean(8) :<b>" + window.Boolean(8) + "</b></div>";
-            html +=  "<div> Boolean(0) :<b>" + window.Boolean(0) + "</b></div>";
-            html +=  "<div> Boolean(null) :<b>" + window.Boolean(null) + "</b></div>";
-            html +=  "<div> Boolean(undefined) :<b>" + window.Boolean(undefined) + "</b></div>";
-            html +=  "<div> Boolean(NaN) :<b>" + window.Boolean(NaN) + "</b></div>";
-            html +=  "<div> typeof !!strVar (used to convert any tyoe to boolean) :<b>" + (typeof !! strVar) + "</b></div>";
-            html +=  "<div> !!strVar (used to convert any tyoe to boolean) :<b>" + !! strVar + "</b></div>";
-            html +=  "<div> typeof undefined :<b>" + typeof undefined + "</b></div>";
-            html +=  "<div> typeof null :<b>" + typeof null + "</b></div>";
-            html +=  "<div> undefined == null :<b>" + (undefined == null) + "</b></div>";
+            var html = "<li> Boolean(\"\") :<b>" + window.Boolean("") + "</b></li>";
+            html +=  "<li> Boolean(\" \") :<b>" + window.Boolean(" ") + "</b></li>";
+            html +=  "<li> Boolean(\"Hello\") :<b>" + window.Boolean("Hello") + "</b></li>";
+            html +=  "<li> Boolean(8) :<b>" + window.Boolean(8) + "</b></li>";
+            html +=  "<li> Boolean(0) :<b>" + window.Boolean(0) + "</b></li>";
+            html +=  "<li> Boolean(null) :<b>" + window.Boolean(null) + "</b></li>";
+            html +=  "<li> Boolean(undefined) :<b>" + window.Boolean(undefined) + "</b></li>";
+            html +=  "<li> Boolean(NaN) :<b>" + window.Boolean(NaN) + "</b></li>";
+            html +=  "<li> typeof !!strVar (used to convert any tyoe to boolean) :<b>" + (typeof !! strVar) + "</b></li>";
+            html +=  "<li> !!strVar (used to convert any tyoe to boolean) :<b>" + !! strVar + "</b></li>";
+            html +=  "<li> typeof undefined :<b>" + typeof undefined + "</b></li>";
+            html +=  "<li> typeof null :<b>" + typeof null + "</b></li>";
+            html +=  "<li> undefined == null :<b>" + (undefined == null) + "</b></li>";
  
             $(findElem).append(html);
         }
