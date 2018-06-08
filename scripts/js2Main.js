@@ -33,6 +33,9 @@ $(function(){
     es6NewSyntax.jsDefaultParaFunc1('#defaultPara ol');
     es6NewSyntax.jsRestOperator('#rest ol', 123, 'veg', 'meat', 'pasta');
     es6NewSyntax.jsSpreadOperator('#spread ol');
-    es6NewSyntax.jsObjectLiteralsEx('#object ol');
-    
+    es6NewSyntax.jsObjectLiteralsEx('#object ol');;
+    es6NewSyntax.jsForOfLoop('#forOfLoop ol');
+    es6NewSyntax.jsOctalBinary('#octalAndBinary ol');
+    es6NewSyntax.jsTemplateLiterals('#temporalLiteral ol');
+    es6NewSyntax.jsDestructuring('#destructuring ol');
 });

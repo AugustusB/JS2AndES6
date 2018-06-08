@@ -168,11 +168,84 @@
 
             html += `<li>productView.demoFunction() :<b> ${productView.demoFunction()} </b></li>`;
             $(findElem).append(html);
+        },
+
+        jsForOfLoop = function jsForOfLoop(findElem = 'body'){
+            let categories = ['shorts', 'shirts', 'hats'];
+            let html = '<li>for (var item of categories) itterables like array :<b>';
+            for (let item of categories){
+                html += ` ${item}, `;
+            }
+            html += `</b></li>`;
+            categories = [,,];
+            html += `<li>for (var item of categories) where itterables = [,,] : <b>`
+            for (let item of categories){
+                html += ` ${item}, `;
+            }
+            categories = 'ABCDEF'
+            html += `</b></li>`;
+            html += `<li>for (var item of categories) where itterables = \"${categories}\" : <b>`
+            for (let item of categories){
+                html += ` ${item}, `;
+            }
+            html += `</b></li>`;
+            $(findElem).append(html);
+        },
+
+        jsOctalBinary = function jsOctalBinary(findElem){
+            let html = '';
+            html += `<li>Octal 0o10 : <b>${0o10}</b></li>`;
+            html += `<li>Binary 0b10 : <b>${0b10}</b></li>`
+            $(findElem).append(html);
+        },
+        jsTemplateLiterals = function jsTemplateLiterals(findElem){
+            let html= '';
+            let myNumber = 9876;
+            html += `<li>String interpolartion in template literals using \${myNumber} : <b> ${myNumber}</b></li>`
+            html += `<li>String interpolartion in template literals using \${\'INV-\' + myNumber} : <b> ${'INV-' + myNumber}</b></li>`
+            var myFunc = function myFunc(msg){
+                let numb1 = 111111;
+                html += msg;
+            }
+            let numb1 = 777777;
+            myFunc(`<li>String interpolartion occurs before function call : <b> ${numb1}</b></li>`);
+            $(findElem).append(html);
+        },
+        jsDestructuring = function jsDestructuring(findElem){
+            let html = '';
+            let names = ['Jim', 'Bob', 'Harry'];
+            let [name1, name2, name3] = names;
+            html += `<li>Destructuring <code class="language-javascript">let names = [\'Jim\', \'Bob\', \'Harry\']; let [name1, name2, name3] = names;</code> name2 : <b> ${name2}</b></li>`;
+            let [name99, , name100] = names;
+            html += `<li>Destructuring <em>skipping values</em> <code class="language-javascript">let names = [\'Jim\', \'Bob\', \'Harry\']; let [name99, , name100] = names;</code> name100: <b> ${name100}</b></li>`;
+            let [name88, ...name77] = names;
+            html += `<li>Destructuring and <em>Rest</em> <code class="language-javascript">let names = [\'Jim\', \'Bob\', \'Harry\']; let [name88, ...name77] = names;</code> name77: <b> ${name77}</b></li>`;
+            
+            let [namew, namex, namey, namez = 'Gus'] = names;
+            html += `<li>Destructuring and <em>Defaults </em><b>(result - namez:  ${namez}</b>) <pre><code class="language-javascript">
+    let names = [\'Jim\', \'Bob\', \'Harry\']; 
+    let [namew, namex, namey, namez = '\Gus\'] = names;
+    html += \`Destructuring and <em>Defaults </em> <b>(result - namez: \${namez}</b>)\`
+    </code></pre> 
+    </li>`;
+            
+            let reviewSalary = function reviewSalary([low,average],high='88000'){
+                html += `<li>Destructuring in 
+                            <em>function parameters</em><b> 
+                            (result - average : ${average})</b></br>`;
+            }
+            reviewSalary(['32000','50000'])
+
+            html += 
+            `<pre><code class="language-javascript">
+    let reviewSalary = function reviewSalary([low,average],high='88000'){
+        html += \`Destructuring in <em>function parameters</em><b> (result - average : \${average}\`)</b>;
+    }
+    reviewSalary(['32000','50000'])
+            </code></pre>`
+            
+            $(findElem).append(html);
         }
-
-        
-
-        
         ;
         // Public members
         return {
@@ -195,7 +268,11 @@
             jsDefaultParaFunc1,
             jsRestOperator,
             jsSpreadOperator,
-            jsObjectLiteralsEx
+            jsObjectLiteralsEx,
+            jsForOfLoop,
+            jsOctalBinary,
+            jsTemplateLiterals,
+            jsDestructuring
         };
     };
 
