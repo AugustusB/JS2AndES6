@@ -243,10 +243,30 @@
     }
     reviewSalary(['32000','50000'])
             </code></pre>`
-            
+          
+            let [age1, age2] = [,]
+            html += `<li>Destructuring <em>edgecase1</em> :<b>(result - age1 : ${age1}, age2 : ${age2})
+            </b><pre><code class="language-javascript">
+    let [age1, age2] = [,]
+    html += Destructuring <em>edgecase1</em> : (result - age1 : \${age1}, age2 : \${age2})
+            </pre></code>
+            </li>` 
             $(findElem).append(html);
-        }
-        ;
+
+            html += `<li>Destructuring <em>edgecase2 array of arrays</em> :<b>(results -`
+            for (let [name, surname] of [['Jim', 'Smith'], ['Jack', 'Charlton']]) {
+               html += ` name:${name}, surmane:${surname}, `;
+            }
+            html += `)</b><pre><code class="language-javascript">
+    html += \`Destructuring <em>array of arrays</em> :(results -\` 
+    for (let [name, surname] of [['Jim', 'Smith'], ['Jack', 'Charlton']]) {
+        html += \` name:\${name}, surmane:\${surmane}, \`;
+    }
+    html += \`)\`</pre></code>
+    </li>` 
+
+            $(findElem).append(html);
+        };
         // Public members
         return {
             newLet1: newLet1,
