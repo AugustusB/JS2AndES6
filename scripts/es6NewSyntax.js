@@ -258,7 +258,7 @@
                html += ` name:${name}, surmane:${surname}, `;
             }
             html += `)</b><pre><code class="language-javascript">
-    html += \`Destructuring <em>array of arrays</em> :(results -\` 
+    html += \`Destructuring <em>edgecase2 array of arrays</em> :(results -\` 
     for (let [name, surname] of [['Jim', 'Smith'], ['Jack', 'Charlton']]) {
         html += \` name:\${name}, surmane:\${surmane}, \`;
     }
